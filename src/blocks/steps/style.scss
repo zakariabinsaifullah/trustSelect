@@ -1,0 +1,61 @@
+.wp-block-gutenbergnative-steps {
+    margin-bottom: 1rem;
+    .wp-block-gutenbergnative-step-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+
+        .step-title {
+            margin: 0 0 10px 0;
+            color: var(--titleColor, #000);
+        }
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    .step-sign {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        border: 2px solid var(--borderColor, #e2e2e2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 2;
+        background: var(--bgColor, #f7f7f7);
+        color: var(--nbColor);
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            object-fit: contain;
+        }
+
+        .step-number {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+    .guten-steps-wrapper {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .guten-steps-wrapper:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        content: '';
+        background: var(--borderColor, #e2e2e2);
+        margin-left: 14px;
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/text-box",
+    "version": "1.0.0",
+    "title": "Text Box",
+    "category": "text",
+    "description": "A customizable text box block.",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

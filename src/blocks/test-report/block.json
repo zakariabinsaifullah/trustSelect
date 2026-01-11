@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/test-report",
+    "version": "1.0.0",
+    "title": "Test Report",
+    "category": "text",
+    "description": "Show result box with score and grade",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

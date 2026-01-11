@@ -1,0 +1,181 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.wp-block-gutenbergnative-table-of-content {
+    margin-bottom: 1rem;
+    .wrapper {
+        background: var(--container-bg, transparent);
+        border-radius: 0.75em;
+        border: 1px solid var(--border-color, #e0e0e0);
+        overflow: hidden;
+    }
+    .sub-heading {
+        margin: 15px 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--sub-color, #333);
+    }
+    // Heading wrapper
+    .native-toc-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: var(--heading-bg, #f5f5f5);
+        transition: all 0.3s ease;
+
+        .minus {
+            display: none;
+        }
+
+        &.active {
+            .plus {
+                display: none;
+            }
+            .minus {
+                display: inline-block;
+            }
+        }
+
+        &.is-clickable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .title {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--heading-color, #333);
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+
+            &:empty::before {
+                color: #999;
+            }
+        }
+
+        .native-toc-toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: none; // removed hover animation
+            flex-shrink: 0;
+
+            svg {
+                width: 16px;
+                min-width: 16px;
+                height: 16px;
+                fill: currentColor;
+                color: var(--icon-color);
+                transition: none; // removed hover transform
+            }
+        }
+    }
+
+    // Content wrapper
+    .native-toc-content {
+        padding: 15px 20px;
+        background: transparent;
+        display: none;
+
+        ul.native-toc-list li + li {
+            border-top: 1px dashed var(--separator-color, #e0e0e0);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .native-toc-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                position: relative;
+                list-style: none;
+                &::before {
+                    display: none;
+                }
+
+                a {
+                    color: var(--list-color);
+                    text-decoration: none;
+                    display: block;
+                }
+
+                .child-list {
+                    margin-top: 8px;
+                    padding-left: 20px;
+                    list-style: none;
+
+                    li::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .native-toc-placeholder {
+            color: #999;
+            font-style: italic;
+            margin: 0;
+        }
+    }
+
+    &.is-collapsed {
+        .native-toc-heading {
+            border-radius: 4px;
+        }
+    }
+
+    .native-toc-content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    ol.native-toc-list {
+        counter-reset: item;
+
+        li {
+            counter-increment: item;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    a.anchor-btn-text {
+        display: block;
+        text-align: center;
+        border: 2px solid var(--anchor-border-color, #008060);
+        background: var(--anchor-bg, #008060);
+        color: var(--anchor-color, #ffffff);
+        border-radius: 0.75em;
+        text-decoration: none;
+        font-size: 0.9375rem;
+        line-height: 1;
+        margin: 15px 0;
+        transition: 0.2s;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

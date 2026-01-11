@@ -1,0 +1,137 @@
+// Accordion Wrapper (Parent Block)
+.guten-accordion-wrapper {
+    position: relative;
+    width: 100%;
+
+    .guten-accordion-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.wp-block-gutenbergnative-accordion {
+    margin-bottom: 1rem;
+}
+
+// Accordion Item Block
+.wp-block-gutenbergnative-accordion-item {
+    position: relative;
+    border-bottom: 2px solid var(--separator, #ffffff);
+    background: var(--nbg, #eaebec);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:first-child {
+        border-radius: 4px 4px 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 4px 4px;
+        border-bottom: none;
+    }
+
+    // Accordion Header
+    .accordion-header {
+        position: relative;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            background: var(--hbg, #e4e5e6);
+
+            .accordion-title {
+                color: var(--htitle) !important;
+            }
+
+            .accordion-icon {
+                fill: var(--hicon) !important;
+            }
+        }
+
+        .accordion-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: none;
+            padding: 0.875rem 1.125rem;
+            box-sizing: border-box;
+            margin: 0;
+            background: none;
+            border: none !important;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--title, #001011);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            gap: 15px;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            // Title Styles
+            .accordion-title {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                font-weight: 500;
+                color: var(--title, #050404);
+                margin: 0;
+                padding: 0;
+                transition: all 0.3s ease;
+            }
+
+            // Icon Container
+            .accordion-icons {
+                width: 18px;
+                height: 18px;
+                .accordion-icon {
+                    position: absolute;
+                    transition: all 0.3s ease;
+                    fill: var(--icon, #333);
+                    transition: all 0.3s ease;
+                }
+            }
+            &.active {
+                .accordion-icons {
+                    .accordion-icon {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    // Accordion Content
+    // Accordion Content
+    .accordion-collapse {
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease;
+
+        .accordion-body {
+            position: relative;
+            padding: 0.25rem 1.125rem 0.875rem;
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            transition:
+                max-height 0.4s ease,
+                opacity 0.3s ease;
+            max-height: max-content;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+// Popup Block Wrapper - Flex Layout
+.wp-block-gutenbergnative-text-box {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--bg-color, #0d242c);
+    .text-box-content {
+        margin: 0;
+        padding: 0;
+        color: var(--text-color, #fff);
+    }
+}

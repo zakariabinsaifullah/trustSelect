@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/table-of-content",
+    "version": "1.0.0",
+    "title": "TOC",
+    "category": "text",
+    "description": "Table of Contents Block",
+    "supports": {
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {},
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./view.js"
+}

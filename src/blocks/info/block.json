@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/info",
+    "version": "1.0.0",
+    "title": "Collapsible Info",
+    "category": "text",
+    "description": "Show collapsible information box",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./frontend.js"
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/steps",
+    "version": "1.0.0",
+    "title": "Steps",
+    "category": "text",
+    "description": "A block to display a series of steps in a process.",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "providesContext": {
+        "gtvb/titleTag": "titleTag",
+        "gtvb/stepType": "stepType"
+    },
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

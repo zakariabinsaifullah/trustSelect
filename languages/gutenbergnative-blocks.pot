@@ -1,0 +1,397 @@
+# Copyright (C) 2025 Zakaria Binsaifullah
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gutenberg Native blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gutenberg-native-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-29T07:19:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: gutenbergnative-blocks\n"
+
+#. Plugin Name of the plugin
+#: gutenbergnative-blocks.php
+msgid "Gutenberg Native blocks"
+msgstr ""
+
+#. Description of the plugin
+#: gutenbergnative-blocks.php
+msgid "Showcase top products, table of contents in Gutenberg editor."
+msgstr ""
+
+#. Author of the plugin
+#: gutenbergnative-blocks.php
+msgid "Zakaria Binsaifullah"
+msgstr ""
+
+#. Author URI of the plugin
+#: gutenbergnative-blocks.php
+msgid "https://devzakaria.com/"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:15
+#: src/blocks/result-box/constants/index.js:73
+#: src/blocks/result-box/constants/index.js:92
+#: src/blocks/result-box/constants/index.js:111
+#: src/blocks/table-of-content/constants/index.js:15
+#: src/blocks/table-of-content/constants/index.js:73
+#: src/blocks/table-of-content/constants/index.js:92
+#: src/blocks/table-of-content/constants/index.js:111
+msgid "Left"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:20
+#: src/blocks/result-box/constants/index.js:83
+#: src/blocks/result-box/constants/index.js:102
+#: src/blocks/result-box/constants/index.js:116
+#: src/blocks/table-of-content/constants/index.js:20
+#: src/blocks/table-of-content/constants/index.js:83
+#: src/blocks/table-of-content/constants/index.js:102
+#: src/blocks/table-of-content/constants/index.js:116
+msgid "Right"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:25
+#: src/blocks/result-box/constants/index.js:97
+#: src/blocks/table-of-content/constants/index.js:25
+#: src/blocks/table-of-content/constants/index.js:97
+msgid "Center"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:59
+#: src/blocks/table-of-content/constants/index.js:59
+msgid "Preset One"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:60
+#: src/blocks/table-of-content/constants/index.js:60
+msgid "Preset Two"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:64
+#: src/blocks/table-of-content/constants/index.js:64
+msgid "Star"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:65
+#: src/blocks/table-of-content/constants/index.js:65
+msgid "Bar (upcoming)"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:66
+#: src/blocks/table-of-content/constants/index.js:66
+msgid "Circle (upcoming)"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:67
+#: src/blocks/table-of-content/constants/index.js:67
+msgid "Badge (upcoming)"
+msgstr ""
+
+#: src/blocks/result-box/constants/index.js:78
+#: src/blocks/table-of-content/constants/index.js:78
+msgid "Top"
+msgstr ""
+
+#: src/blocks/result-box/edit.js:123
+msgid "Edit Photo"
+msgstr ""
+
+#: src/blocks/result-box/edit.js:143
+msgid "label.."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:150
+msgid "product title.."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:157
+msgid "subtitle.."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:164
+msgid "write description.."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:171
+msgid "price.."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:242
+msgid "Upload Product Photo"
+msgstr ""
+
+#: src/blocks/result-box/edit.js:243
+msgid "Drag and drop a photo, upload a new one or select a file from your media library. Even you can add an image link to the product photo."
+msgstr ""
+
+#: src/blocks/result-box/edit.js:314
+msgid "pros title"
+msgstr ""
+
+#: src/blocks/result-box/edit.js:431
+msgid "Fazit Titel.."
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:62
+#: src/blocks/table-of-content/inspector.js:31
+msgid "General"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:64
+msgid "Product Link"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:69
+msgid "Show Conclusion Section"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:81
+msgid "Conclusion Title"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:88
+msgid "Enter conclusion title"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:91
+msgid "Show Secondary Button"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:103
+msgid "Show Primary Button"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:115
+msgid "Button Text"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:122
+msgid "Enter button text"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:126
+msgid "Badge"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:157
+msgid "Upload Badge"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:161
+#: src/blocks/table-of-content/inspector.js:87
+msgid "Content"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:163
+#: src/blocks/result-box/inspector.js:303
+msgid "Label"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:170
+msgid "Enter label"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:173
+#: src/blocks/result-box/inspector.js:246
+msgid "Title"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:180
+#: src/blocks/result-box/inspector.js:253
+msgid "Enter title"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:183
+msgid "Title Tag"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:193
+msgid "Subtitle"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:200
+msgid "Enter subtitle"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:203
+msgid "Description"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:210
+msgid "Enter description"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:213
+msgid "Price"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:220
+msgid "Enter price"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:223
+msgid "Score"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:225
+#: src/blocks/result-box/inspector.js:256
+msgid "Value"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:233
+msgid "Text"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:236
+msgid "Enter score text"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:239
+msgid "Score Bars"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:276
+msgid "Add Score Bar"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:287
+msgid "Global Colors"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:293
+msgid "Container Background"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:298
+#: src/blocks/table-of-content/inspector.js:72
+#: src/blocks/table-of-content/inspector.js:98
+#: src/blocks/table-of-content/inspector.js:114
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:309
+#: src/blocks/result-box/inspector.js:325
+#: src/blocks/table-of-content/inspector.js:67
+#: src/blocks/table-of-content/inspector.js:93
+msgid "Background"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:314
+#: src/blocks/result-box/inspector.js:330
+#: src/blocks/result-box/inspector.js:341
+#: src/blocks/result-box/inspector.js:353
+#: src/blocks/result-box/inspector.js:364
+#: src/blocks/result-box/inspector.js:375
+msgid "Color"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:319
+msgid "Button"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:335
+msgid "Separator"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:347
+msgid "Bar"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:358
+msgid "CheckMark"
+msgstr ""
+
+#: src/blocks/result-box/inspector.js:369
+msgid "CrossMark"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:33
+msgid "Heading Text"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:38
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:47
+msgid "Anchor Button Text"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:52
+msgid "Anchor ID"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:55
+msgid "Enter anchor ID without # sign"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:61
+msgid "Header"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:77
+msgid "Icon Color"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:82
+#: src/blocks/table-of-content/inspector.js:124
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:103
+msgid "Separator Color"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:108
+msgid "Anchor Button"
+msgstr ""
+
+#: src/blocks/table-of-content/inspector.js:119
+msgid "Background Color"
+msgstr ""
+
+#: src/controls/add-control/index.js:3
+msgid "Add"
+msgstr ""
+
+#: src/controls/link-control/index.js:61
+msgid "Open in new tab"
+msgstr ""
+
+#: src/controls/link-control/index.js:74
+msgid "Add nofollow rel"
+msgstr ""
+
+#: src/controls/link-control/index.js:87
+msgid "Add sponsored rel"
+msgstr ""
+
+#: src/controls/remove-control/index.js:6
+msgid "Remove"
+msgstr ""
+
+#: src/blocks/result-box/block.json
+msgctxt "block title"
+msgid "Result Box"
+msgstr ""
+
+#: src/blocks/result-box/block.json
+msgctxt "block description"
+msgid "Show result box with score and grade"
+msgstr ""
+
+#: src/blocks/table-of-content/block.json
+msgctxt "block title"
+msgid "TOC"
+msgstr ""
+
+#: src/blocks/table-of-content/block.json
+msgctxt "block description"
+msgid "Table of Contents Block"
+msgstr ""

@@ -1,0 +1,136 @@
+// Wrapper
+.gtvb-tca-wrapper {
+    position: relative;
+    width: 100%;
+
+    .gtvb-tca-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.wp-block-gutenbergnative-info {
+    margin-bottom: 1rem;
+}
+
+// Item Block
+.gtvb-tca-item {
+    position: relative;
+    background-color: var(--c-bg, #eaebec);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: var(--c-radius, 4px);
+
+    .tca-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .author-photo {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    .author-photo img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .tca-header {
+        position: relative;
+
+        .tca-subtitle,
+        .tca-date-label {
+            font-size: 12px;
+            line-height: 1.25rem;
+            color: var(--title-color, #001011);
+            padding: 0;
+        }
+
+        .tca-date-label {
+            opacity: 0.8;
+        }
+
+        .tca-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 0.875rem 1.125rem;
+            background: transparent;
+            border: none !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            gap: 8px;
+            box-sizing: border-box;
+
+            .tca-title {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+                font-weight: 600;
+                color: var(--title-color, #001011);
+                margin: 0;
+                padding: 0;
+                flex: 1;
+                letter-spacing: 0;
+            }
+
+            .tca-icons {
+                position: relative;
+                width: 1.5em;
+                height: 1.5em;
+                flex-shrink: 0;
+
+                .tca-icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1.5em;
+                    height: 1.5em;
+                    transition: all 0.2s ease;
+
+                    path {
+                        stroke: var(--svg-color, #333);
+                    }
+                }
+            }
+
+            &.active {
+                .tca-icon {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .tca-collapse {
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease;
+
+        &.active {
+            opacity: 1;
+            max-height: 2000px;
+        }
+    }
+
+    .tca-content {
+        padding: 0 1.125rem 0.875rem;
+        p {
+            margin: 0 0 1.25rem 0;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,374 @@
+.wp-block-gutenbergnative-test-report {
+    margin: 40px 0 1rem;
+    background-color: var(--c-bg, #e8f5ed);
+    color: var(--c-text, #001011);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: visible;
+    box-sizing: border-box;
+    position: relative;
+
+    .product-area {
+        width: 100%;
+    }
+
+    .gn-padding {
+        padding: 1.25rem;
+    }
+
+    .gn-w-full {
+        width: 100%;
+    }
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .photo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+    .photo {
+        position: relative;
+    }
+
+    .product-wrapper {
+        display: block;
+        text-decoration: none;
+        position: relative;
+        margin-bottom: 12px;
+
+        img {
+            width: 8rem;
+        }
+    }
+
+    // Rating
+    .rating-numer {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .report-rating {
+        display: flex;
+        gap: 2px;
+
+        svg {
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    .rating-number {
+        font-weight: 600;
+    }
+
+    .rating-desc {
+        font-size: 14px;
+    }
+
+    // Test Winner Badge
+    .TestWinnerBadge {
+        font-size: 8px;
+        background-color: #f9d356;
+        padding: 0.5em;
+        width: fit-content;
+        color: #000;
+        border-radius: 0.5em;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        line-height: normal;
+        margin-top: -40px;
+        align-self: start;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+
+        &::before {
+            content: '';
+            width: calc(100% - 1em);
+            height: 9em;
+            position: absolute;
+            top: -9em;
+            border-radius: 50%;
+            box-shadow: 0 0 2.25em 3em #ffffffe7;
+            z-index: -1;
+        }
+    }
+
+    .TestWinnerBadge__OuterBox {
+        border: 0.125em solid #000;
+        border-radius: 0.5em;
+        display: grid;
+        grid-template-columns: [column-start] 50px [column2-start] 64px [column-end];
+        grid-template-rows: [row-start] auto [row2-start] auto [row3-start] auto [row-end];
+    }
+
+    .TestWinnerBadge__UpperText {
+        grid-column-start: column-start;
+        grid-column-end: span column-end;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.75em;
+        padding: 0.5em 0.25em;
+        text-align: center;
+    }
+
+    .TestWinnerBadge__Quarree {
+        background-color: #fff;
+        padding: 1em 0.75em;
+        border-top: 0.125em solid #000;
+
+        &--UL {
+            background-color: #000;
+            color: #fff;
+            font-size: 0.8125em;
+            font-weight: 700;
+            letter-spacing: 0.0625em;
+            border-right: 0.125em solid #000;
+        }
+
+        &--UR {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8125em;
+            letter-spacing: 0.0625em;
+        }
+
+        &--DL {
+            background-color: var(--badge-bg, #e70707);
+            color: #fff;
+            border-radius: 0 0 0 0.3125em;
+            display: flex;
+            gap: 0.5em;
+            flex-direction: column;
+            text-transform: uppercase;
+            border-right: 0.125em solid #000;
+        }
+
+        &--DR {
+            padding: 1em 0.25em;
+            border-radius: 0 0 0.3125em 0;
+            display: flex;
+            gap: 0.5em;
+            flex-direction: column;
+        }
+    }
+
+    .TestWinnerBadge__GVDLogo {
+        width: 3.5em;
+    }
+
+    .TestWinnerBadge__GVDName {
+        font-size: 5px;
+        font-weight: 700;
+        color: var(--badge-color);
+    }
+
+    .TestWinnerBadge__Criteria {
+        font-size: 6px;
+    }
+
+    .TestWinnerBadge__Edition {
+        font-size: 6px;
+        font-weight: 700;
+        margin-top: auto;
+    }
+
+    .TestWinnerBadge__Url {
+        font-size: 4.5px;
+        & a {
+            text-decoration: none;
+        }
+    }
+
+    .label {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: var(--label-bg, linear-gradient(165deg, #fce8a7, #fed77d 31%, #ffe7b2 50%, #fed77b 71%, #ffedb0));
+        color: var(--label-color, #001011);
+        box-shadow: 0 1px 3px #0000002b;
+    }
+    // title
+    .title {
+        margin: 12px 0 0;
+        line-height: 1.3;
+        font-size: 25px;
+    }
+    .price {
+        font-size: 16px;
+    }
+
+    // Pros and Cons Area
+    .pros-cons-area {
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 0;
+        column-count: 2;
+    }
+
+    li.list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        list-style: none;
+        padding: 12px;
+        font-size: 1rem;
+        padding-left: 0;
+    }
+
+    .pc-row {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+
+        svg {
+            width: 16px;
+            min-width: 16px;
+            height: 16px;
+            margin-top: 5px;
+        }
+
+        .list-label-text {
+            flex: 1;
+        }
+    }
+
+    .pc-row button.remove {
+        background: none;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+
+        svg {
+            width: 13px !important;
+            height: 13px !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    .pros svg path {
+        fill: var(--checkmar-color, #0d7b28);
+    }
+
+    .pros-cons-action {
+        grid-column: 1 / -1;
+        border-bottom: none !important;
+    }
+    .report-footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 32px;
+    }
+    .footer-button a {
+        padding: 1rem 1.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--btn-color, #fff);
+        background-color: var(--btn-bg, #008060);
+        border-radius: 4px;
+        text-decoration: none;
+        line-height: 1.5rem;
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    .report-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        figure {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 6rem;
+            height: auto;
+        }
+    }
+
+    .report-logos-wrapper {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .logos-title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin-bottom: 0.25rem;
+    }
+}
+
+// mobile view
+@media screen and (max-width: 767px) {
+    .wp-block-gutenbergnative-test-report {
+        margin-left: -15px;
+        margin-right: -15px;
+
+        .photo {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .TestWinnerBadge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            margin-top: -20px;
+        }
+
+        .image-photo {
+            text-align: left;
+            width: 100%;
+        }
+
+        .product-wrapper {
+            max-width: 50%;
+            margin-bottom: 0 !important;
+        }
+
+        .pros-cons-area {
+            column-count: 1;
+        }
+
+        .report-logos {
+            gap: 1rem;
+            img {
+                width: 4rem;
+            }
+        }
+    }
+}

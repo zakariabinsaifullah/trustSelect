@@ -1,0 +1,159 @@
+.gtvb-popup-open {
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(54, 54, 54, 0.5);
+        z-index: 99999;
+    }
+}
+
+// #top.lowerindex {
+//     position: inherit;
+// }
+
+.popup-box {
+    z-index: 99999 !important;
+}
+
+// Popup Block Wrapper - Flex Layout
+.wp-block-gutenbergnative-button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    position: relative;
+    z-index: auto;
+    // Trigger button
+    .popup-trigger {
+        display: inline-flex;
+        padding: 0.75rem 1rem;
+        letter-spacing: 0.42px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        border-radius: 4px !important;
+        border: none;
+        cursor: pointer;
+        color: var(--btn-color, #001011);
+        background: var(--btn-bg, #eef9ef);
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        &:hover {
+            color: var(--btn-hover-color, #001011);
+            background: var(--btn-hover-bg, #e7f2e9);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    // Popup overlay
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .popup-box {
+        overflow: hidden;
+        -webkit-overflow-scrolling: unset;
+        max-width: var(--popup-max-width, 656px);
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 140px);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        background: var(--popup-bg, #ffffff);
+        transform: translate(-50%, -50%);
+        border-radius: 4px;
+        transition:
+            opacity 0.3s ease-in-out,
+            visibility 0.3s ease-in-out,
+            max-height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    .popup-box.frontend {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            max-height: calc(100vh - 140px);
+        }
+    }
+
+    .popup-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 20px;
+        border-bottom: 1px solid var(--pop-separator, #ebeced);
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 99;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--pop-title, #001011);
+        flex: 1;
+        line-height: 1.2rem;
+    }
+
+    button.close-btn {
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .popup-inner-content {
+        padding: 13px 20px;
+        overflow-x: clip;
+    }
+}

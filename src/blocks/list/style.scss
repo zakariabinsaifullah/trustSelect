@@ -1,0 +1,51 @@
+.wp-block-gutenbergnative-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebeced;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .Referencance-list {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .refrance-title {
+        flex-grow: 1;
+        line-height: normal;
+        align-self: center;
+        color: var(--list-color, #213e46);
+    }
+    .referance-number {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        font-size: 13px;
+        text-align: center;
+        border-radius: 100%;
+        border: 1px solid var(--number-color, #213e46);
+        flex-shrink: 0;
+        font-weight: 700;
+        color: var(--number-color, #213e46);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            stroke: var(--list-icon-color, rgb(24, 2, 2));
+            fill: none;
+        }
+    }
+}

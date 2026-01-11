@@ -1,0 +1,41 @@
+{
+    "name": "gutenbergnative-blocks",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start",
+        "packages-update": "wp-scripts packages-update",
+        "make-pot": "wp i18n make-pot . languages/gutenbergnative-blocks.pot --exclude=node_modules,assets,build",
+        "zip-plugin": "cd .. && zip -r gutenbergnative-blocks.zip gutenbergnative-blocks -x \"gutenbergnative-blocks/node_modules/*\" \"gutenbergnative-blocks/src/*\" \"gutenbergnative-blocks/.git/*\" \"gutenbergnative-blocks/.vscode/*\" \"gutenbergnative-blocks/.DS_Store\" \"gutenbergnative-blocks/**/.DS_Store/*\" \"gutenbergnative-blocks/.idea/*\" \"gutenbergnative-blocks/phpcs.xml\" \"gutenbergnative-blocks/composer.lock\" \"gutenbergnative-blocks/.eslintrc.json\" \"gutenbergnative-blocks/package.json\" \"gutenbergnative-blocks/package-lock.json\" \"gutenbergnative-blocks/webpack.config.js\" \"gutenbergnative-blocks/.gitignore\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "prettier": {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "htmlWhitespaceSensitivity": "css",
+        "insertPragma": false,
+        "jsxBracketSameLine": false,
+        "jsxSingleQuote": false,
+        "printWidth": 140,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "none",
+        "useTabs": false,
+        "rangeStart": 0
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^31.0.0"
+    },
+    "dependencies": {
+        "@wordpress/icons": "^11.2.0",
+        "classnames": "^2.3.2"
+    }
+}

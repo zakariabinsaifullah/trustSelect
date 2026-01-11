@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/anchornavigation",
+    "version": "1.0.0",
+    "title": "Anchor navigation",
+    "category": "text",
+    "description": "Show a single source.",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

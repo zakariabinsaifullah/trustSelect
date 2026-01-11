@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "gutenbergnative/accordion",
+    "version": "1.0.0",
+    "title": "Accordion",
+    "category": "text",
+    "description": "Show result box with score and grade",
+    "supports": {
+        "html": true,
+        "align": ["wide", "full"],
+        "anchor": true
+    },
+    "example": {},
+    "providesContext": {
+        "gtvb/titleTag": "titleTag",
+        "gtvb/schemaType": "schemaType"
+    },
+    "textdomain": "gutenbergnative-blocks",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./frontend.js"
+}

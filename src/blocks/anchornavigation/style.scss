@@ -1,0 +1,66 @@
+.wp-block-gutenbergnative-anchornavigation {
+    margin-bottom: 2rem;
+    .anchornavigation-button {
+        .anchor-heading {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color, #001011);
+        }
+
+        .anchor-button {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .Button--small {
+                width: calc(50% - 0.5rem);
+                a {
+                    display: block;
+                    padding: 0.75rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    letter-spacing: 0.42px;
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    font-weight: 500;
+                    border-radius: 4px;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            .primary-button {
+                a {
+                    background: var(--pri-bg, #00755e);
+                    color: var(--pri-color, #fff);
+                    border: 2px solid currentColor;
+                }
+            }
+
+            .secondary-button {
+                a {
+                    background: var(--scon-bg, #fff);
+                    color: var(--scon-color, #00755e);
+                    border: 2px solid currentColor;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wp-block-gutenbergnative-anchornavigation {
+        .anchornavigation-button {
+            .anchor-button {
+                gap: 0.5rem;
+                .Button--small {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
