@@ -16,7 +16,7 @@ class TrustSelect_Schema_Accumulator {
 
     public static function init() {
         // Integrate with Yoast if available
-        add_filter( 'wpseo_schema_graph', [ __CLASS__, 'modify_yoast_graph' ], 10, 2 );
+        add_filter( 'wpseo_schema_graph', [ __CLASS__, 'modify_yoast_graph' ], 999, 2 );
 
         // Collect block data
         add_filter( 'render_block', [ __CLASS__, 'extract_block_data' ], 10, 2 );
@@ -201,15 +201,15 @@ class TrustSelect_Schema_Accumulator {
                 'description' => self::clean_text( $attrs['description'] ?? '' ),
             ];
 
-            // Review
-            self::$review = [
-                '@type'  => 'Review',
-                'author' => [
-                    '@type' => 'Organization',
-                    'name'  => self::clean_text( $attrs['authorName'] ?? get_bloginfo( 'name' ) ),
-                    'url'   => $attrs['aboutUrl'] ?? home_url()
-                ]
-            ];
+            // // Review
+            // self::$review = [
+            //     '@type'  => 'Review',
+            //     'author' => [
+            //         '@type' => 'Organization',
+            //         'name'  => self::clean_text( $attrs['authorName'] ?? get_bloginfo( 'name' ) ),
+            //         'url'   => $attrs['aboutUrl'] ?? home_url()
+            //     ]
+            // ];
         }
 
         return $block_content;
@@ -236,53 +236,73 @@ class TrustSelect_Schema_Accumulator {
 
         // Find the Main Entity (Article, BlogPosting, or WebPage)
         $main_entity_index = -1;
+        $webpage_index = -1;
+
         foreach ( $pieces as $index => $piece ) {
             if ( isset( $piece['@type'] ) ) {
-                if ( in_array( 'BlogPosting', (array)$piece['@type'] ) || in_array( 'Article', (array)$piece['@type'] ) ) {
+                $types = (array) $piece['@type'];
+                if ( in_array( 'BlogPosting', $types ) || in_array( 'Article', $types ) ) {
                     $main_entity_index = $index;
-                    break;
                 }
-            }
-        }
-        // Fallback to WebPage if no Article found
-        if ( $main_entity_index === -1 ) {
-            foreach ( $pieces as $index => $piece ) {
-                if ( isset( $piece['@type'] ) && in_array( 'WebPage', (array)$piece['@type'] ) ) {
-                    $main_entity_index = $index;
-                    break;
+                if ( in_array( 'WebPage', $types ) ) {
+                    $webpage_index = $index;
                 }
             }
         }
 
-        if ( $main_entity_index !== -1 ) {
-            $main_entity = &$pieces[ $main_entity_index ];
+        // Clean up WebPage if Article exists
+        if ( $main_entity_index !== -1 && $webpage_index !== -1 ) {
+            // Remove image from WebPage to avoid duplication with Article image
+            if ( isset( $pieces[ $webpage_index ]['image'] ) ) {
+                unset( $pieces[ $webpage_index ]['image'] );
+            }
+            if ( isset( $pieces[ $webpage_index ]['primaryImageOfPage'] ) ) {
+                unset( $pieces[ $webpage_index ]['primaryImageOfPage'] );
+            }
+            if ( isset( $pieces[ $webpage_index ]['thumbnailUrl'] ) ) {
+                unset( $pieces[ $webpage_index ]['thumbnailUrl'] );
+            }
+            // Remove breadcrumb from WebPage if it's already handled or redundant
+            if ( isset( $pieces[ $webpage_index ]['breadcrumb'] ) ) {
+                unset( $pieces[ $webpage_index ]['breadcrumb'] );
+            }
+        }
+
+        // Fallback to WebPage if no Article found for injections
+        $target_index = ($main_entity_index !== -1) ? $main_entity_index : $webpage_index;
+
+        if ( $target_index !== -1 ) {
+            $main_entity = &$pieces[ $target_index ];
 
             // 1. Author Replacement
-            // Find the author ID referenced by the main entity
-            $author_id = null;
-            if ( isset( $main_entity['author'] ) ) {
-                if ( is_array( $main_entity['author'] ) && isset( $main_entity['author']['@id'] ) ) {
-                    $author_id = $main_entity['author']['@id'];
-                } elseif ( is_string( $main_entity['author'] ) ) { // Less likely in Yoast graph but possible
-                     $author_id = $main_entity['author'];
+            // Only do this for Article/BlogPosting, not WebPage usually, unless desired
+            // The user wanted Author on the Article.
+            if ( $main_entity_index !== -1 ) { 
+                 // Find the author ID referenced by the main entity
+                $author_id = null;
+                if ( isset( $main_entity['author'] ) ) {
+                    if ( is_array( $main_entity['author'] ) && isset( $main_entity['author']['@id'] ) ) {
+                        $author_id = $main_entity['author']['@id'];
+                        // Ensure we rely on the linked node, not inline data
+                        $main_entity['author'] = [ '@id' => $author_id ];
+                    } elseif ( is_string( $main_entity['author'] ) ) { // Less likely in Yoast graph but possible
+                         $author_id = $main_entity['author'];
+                    }
                 }
-            }
 
-            // If we have an author ID and our replacement data
-            if ( $author_id && self::$author_data ) {
-                 foreach ( $pieces as &$piece ) {
-                    if ( isset( $piece['@id'] ) && $piece['@id'] === $author_id ) {
-                        // Found the author node!
-                        // Completely replace it with our Organization data, but KEEP the @id
-                        $piece = self::$author_data; 
-                        $piece['@id'] = $author_id;
-                        
-                        // Ensure type is Organization
-                        $piece['@type'] = 'Organization';
-
-                        // If Yoast has 'image' for Person, and we have 'logo' for Organization, that's fine.
-                        // We strictly use our data.
-                        break; 
+                // If we have an author ID and our replacement data
+                if ( $author_id && self::$author_data ) {
+                     foreach ( $pieces as &$piece ) {
+                        if ( isset( $piece['@id'] ) && $piece['@id'] === $author_id ) {
+                            // Found the author node!
+                            // Completely replace it with our Organization data, but KEEP the @id
+                            $piece = self::$author_data; 
+                            $piece['@id'] = $author_id;
+                            
+                            // Ensure type is Organization
+                            $piece['@type'] = 'Organization';
+                            break; 
+                        }
                     }
                 }
             }
@@ -358,14 +378,8 @@ class TrustSelect_Schema_Accumulator {
 
     public static function render_json_ld() {
 
-        // If Yoast is successfully modifying the graph, we don't need to output our own.
-        // We check if the Yoast filter ran? Or just check if Yoast is active.
-        // The safest is: if Yoast is active, we assume our data was injected.
-        // There is a case where Yoast is active but NOT outputting JSON-LD (user disabled it). 
-        // But the requirement says "Yoast won't be disabled completely". 
-        // Let's check for the Yoast class.
-        
-        if ( class_exists( 'WPSEO_Frontend' ) ) {
+        // Check if Yoast is active (class or constant)
+        if ( class_exists( 'WPSEO_Frontend' ) || defined( 'WPSEO_VERSION' ) ) {
             return;
         }
 
