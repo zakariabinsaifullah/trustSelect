@@ -4,7 +4,7 @@
  * Author: Zakaria Binsaifullah
  * Author URI: https://devzakaria.com/
  * Description: Showcase top products, table of contents in Gutenberg editor.
- * Version: 2.10.0
+ * Version: 2.11.0
  * Text Domain: gutenbergnative-blocks
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // define plugin version
-define( 'GTVB_VERSION', '2.10.0' );
+define( 'GTVB_VERSION', '2.11.0' );
 
 // include the schema accumulator
 require_once plugin_dir_path( __FILE__ ) . 'schema/schema.php';
