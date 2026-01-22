@@ -20,7 +20,7 @@ const Save = props => {
                             <div className="title-content">
                                 <div className="tca-subtitle">{subTitle}</div>
                                 <RichText.Content tagName="p" className="tca-title" value={title} />
-                                <div className="tca-date-label">{`${dateLabel} ${format('d M, Y', updateDate)}`}</div>
+                                <div className="tca-date-label">{`${dateLabel} ${format('d M Y', updateDate)}`}</div>
                             </div>
                         </div>
                         <div className="tca-icons">

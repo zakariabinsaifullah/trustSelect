@@ -113,7 +113,7 @@ const Edit = props => {
                                         onChange={v => setAttributes({ title: v })}
                                         placeholder={__('Add title here...', 'gtvbnative-blocks')}
                                     />
-                                    <div className="tca-date-label">{`${dateLabel} ${format('d M, Y', updateDate)}`}</div>
+                                    <div className="tca-date-label">{`${dateLabel} ${format('d M Y', updateDate)}`}</div>
                                 </div>
                             </div>
 
